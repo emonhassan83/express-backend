@@ -1,0 +1,5 @@
+# root/pnpm-workspace.yaml
+packages:
+  - "common"
+  - "server"
+  - "worker"

@@ -1,0 +1,37 @@
+{
+  "name": "@scale/common",
+  "version": "1.0.0",
+  "description": "Shared models and utilities",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./config/*": {
+      "types": "./dist/app/config/*.d.ts",
+      "import": "./dist/app/config/*.js",
+      "default": "./dist/app/config/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.34.3",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mongoose": "^9.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "typescript": "^6.0.3"
+  }
+}
