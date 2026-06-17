@@ -1,11 +1,10 @@
 // server/src/server.ts
-import { connectDB, disconnectDB } from '@scale/common';
+import { config, connectDB, disconnectDB } from '@scale/common';
 import express from 'express';
 import { createServer, Server } from 'http';
 import app from './app';
 
-const PORT =  5000;
-
+const PORT = Number(config.port);
 const server: Server = createServer(app);
 
 const startServer = async () => {
@@ -13,8 +12,8 @@ const startServer = async () => {
     await connectDB();
     console.log('✅ Database connected');
     
-    server.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+    server.listen(PORT, config.ip as string, () => {
+      console.log(`🚀 Server running on http://${config.ip}:${PORT}`);
     });
 
   } catch (error) {
